@@ -382,9 +382,6 @@ header {
     header .header-flex {
       height: 394px; } }
 
-.profession {
-  height: 544px; }
-
 .pro-flex {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -395,7 +392,8 @@ header {
   /* 將 align-items: center; 改成 baseline 讓 li 都能對齊 */
   -webkit-box-align: baseline;
       -ms-flex-align: baseline;
-          align-items: baseline; }
+          align-items: baseline;
+  padding-bottom: 5rem; }
 
 .serviceList {
   /* 寬度改用 % */
@@ -419,8 +417,6 @@ header {
     font-size: 24px; }
 
 @media (max-width: 768px) {
-  .profession {
-    height: 668px; }
   .pro-flex {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap; }
@@ -436,13 +432,13 @@ header {
       margin-bottom: 0.5rem; } }
 
 @media (max-width: 375px) {
-  .profession {
-    height: 1091px; }
-    .profession h3 {
-      padding-top: 2rem;
-      margin-bottom: 2rem; }
-  .pro-flex li img {
-    width: 5rem; }
+  .profession h3 {
+    padding-top: 2rem;
+    margin-bottom: 2rem; }
+  .pro-flex {
+    padding-bottom: 3.5rem; }
+    .pro-flex li img {
+      width: 5rem; }
   .serviceList {
     width: 14rem;
     margin: 0 auto;
