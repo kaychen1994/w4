@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -167,9 +168,8 @@ a {
     border: 1px solid rgba(0, 0, 0, 0.13); } }
 
 nav .nav-link {
-  height: 108px;
-  padding-right: 5.5rem;
-  padding-left: 5.5rem;
+  /* 刪除寫死的高度，改用 padding 推 */
+  padding: 1.875rem 5.5rem;
   background-color: #AA0601; }
 
 nav ul {
@@ -177,6 +177,7 @@ nav ul {
       -ms-flex-pack: end;
           justify-content: flex-end; }
   nav ul a {
+    display: block;
     font-size: 20px;
     margin-left: 4rem; }
 
@@ -391,12 +392,14 @@ header {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center; }
+  /* 將 align-items: center; 改成 baseline 讓 li 都能對齊 */
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline; }
 
 .serviceList {
-  width: 282px;
+  /* 寬度改用 % */
+  width: 25%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -602,9 +605,10 @@ header {
   margin-top: -300px; }
   .customer h3 {
     padding-top: 0; }
+  .customer li {
+    width: 23.5%; }
 
 .customer-msg {
-  width: 282px;
   margin-bottom: 5rem;
   border-right: 1px solid #DEE2E6;
   border-left: 1px solid #DEE2E6;
@@ -627,8 +631,9 @@ header {
     .customer ul {
       -ms-flex-wrap: wrap;
           flex-wrap: wrap; }
+    .customer li {
+      width: 48%; }
   .customer-msg {
-    width: 324px;
     margin-bottom: 1.5rem;
     border-right: 1px solid #DEE2E6;
     border-left: 1px solid #DEE2E6;
@@ -642,8 +647,9 @@ header {
     margin-top: -220px;
     margin-bottom: 1rem;
     /*40-24*/ }
-  .customer-msg {
-    width: 352px; } }
+    .customer li {
+      width: 97%;
+      margin: 0 auto; } }
 
 .contact h3 {
   margin-bottom: 0; }
@@ -684,16 +690,24 @@ form input[type=textarea] {
 
 form input[type=submit] {
   width: 180px;
-  height: 54px;
   color: #FFF;
   background-color: #AA0601;
   padding: 16px 58px 16px 58px;
-  margin-left: 306px;
   margin-bottom: 92px;
   font-size: 16px; }
 
 form input[type=submit]:hover {
   background-color: #650300; }
+
+.contact-footer {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+
+.checkbox {
+  -ms-flex-item-align: start;
+      align-self: start; }
 
 @media (max-width: 768px) {
   .contact-px {
@@ -703,7 +717,6 @@ form input[type=submit]:hover {
     width: 136px;
     height: 36px;
     padding: 7px 36px 7px 36px;
-    margin-left: 11.25rem;
     margin-bottom: 3.5rem; } }
 
 @media (max-width: 375px) {
@@ -713,7 +726,6 @@ form input[type=submit]:hover {
     padding-right: 12.5px;
     padding-left: 12.5px; }
   form input[type=submit] {
-    margin-left: 6rem;
     margin-bottom: 2.5rem; } }
 
 .banner {
